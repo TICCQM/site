@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Área Restrita - CCQM</title>
+
+<link rel="icon" type="image/x-icon" href="../imagens/icone.png">
+<link rel="stylesheet" href="../css/style.css">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+
+<body>
+
+<script>
+// BLOQUEIO
+if(localStorage.getItem("logado") !== "true"){
+  window.location.href = "login.html";
+}
+</script>
+
+<!-- HEADER -->
+<div class="dashboard-header">
+  <h2>CCQM - Sistemas Internos</h2>
+  <button onclick="logout()">Sair</button>
+</div>
+
+<!-- CONTEÚDO -->
+<div class="dashboard-container">
+
+  <h1 class="dashboard-title">Plataformas da Empresa</h1>
+
+  <div class="dashboard-grid">
+
+    <a href="https://ccqm.conexos.cloud/login" target="_blank" class="dashboard-card">
+      <img src="../imagens/logo conexos.png" class="card-img">
+      <h3>Conexos</h3>
+    </a>
+
+    <a href="https://app.powerbi.com/view?r=eyJrIjoiZGI1M2Y4YzAtMGY4Yy00ZWIzLThkNjEtNThjMjgzNzhiOGVkIiwidCI6IjRmMmE5NmE4LTRlM2MtNGUyYi04MGIzLTY5NGI2ODhiYjRmZiJ9"
+       target="_blank" class="dashboard-card">
+      <img src="../imagens/logo bi.png" class="card-img">
+      <h3>Power BI</h3>
+    </a>
+
+    <a href="https://painel.vbox.com.br/auth/login/?domain=ccqm" target="_blank" class="dashboard-card">
+      <img src="../imagens/logo vbox.png" class="card-img">
+      <h3>vBox</h3>
+    </a>
+
+    <a href="https://exchange.penso.com.br/owa/auth/logon.aspx" target="_blank" class="dashboard-card">
+      <img src="../imagens/logo outlook.png" class="card-img">
+      <h3>Outlook Web</h3>
+    </a>
+
+    <a href="https://ccqm.milldesk.com/widgets/csc?csc=ccqmcsc" target="_blank" class="dashboard-card">
+      <img src="../imagens/logo milldesk.png" class="card-img">
+      <h3>Milldesk</h3>
+    </a>
+
+    <a href="https://ccqm.vibe.gp/login" target="_blank" class="dashboard-card">
+      <img src="../imagens/logo vibe.png" class="card-img">
+      <h3>Portal Vibe (RH)</h3>
+    </a>
+
+  </div>
+
+</div>
+
+<script>
+function logout(){
+  localStorage.removeItem("logado");
+  window.location.href = "acesso restrito.html";
+}
+</script>
+
+</body>
+</html>

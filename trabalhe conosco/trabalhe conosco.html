@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trabalhe Conosco - CCQM</title>
+
+<link rel="icon" type="image/x-icon" href="../imagens/icone.png">
+<link rel="stylesheet" href="../css/style.css">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+
+  <!-- LOGO -->
+  <a href="../index.html">
+    <img src="../imagens/CCQM.png" alt="Logo CCQM">
+  </a>
+
+  <!-- BOTÃO HAMBÚRGUER -->
+  <div class="menu-toggle" onclick="toggleMenu()">
+    <i class="fas fa-bars"></i>
+  </div>
+
+  <!-- MENU -->
+  <nav id="nav">
+    <a href="../index.html">Home</a>
+
+    <div class="dropdown">
+      <a href="../index.html#sobre">Quem Somos</a>
+      <div class="dropdown-menu">
+        <a href="../quem somos/centros distribuicao/centros distribuicao.html">Centros de Distribuição</a>
+        <a href="../quem somos/nossas unidades/nossas unidades.html">Nossas Unidades</a>
+      </div>
+    </div>
+
+    <a href="../index.html#segmentos">Segmentos</a>
+    <a href="#">Trabalhe Conosco</a>
+    <a href="../contato/contato.html">Contato</a>
+    <a href="../acesso restrito/acesso restrito.html">Acesso Restrito</a>
+  </nav>
+
+</header>
+
+<!-- ESPAÇO HEADER FIXO -->
+<div style="height:100px;"></div>
+
+<!-- CONTEÚDO -->
+<section class="section">
+  <h1 style="text-align:center; margin-bottom:30px;">
+    Trabalhe Conosco
+  </h1>
+
+  <div class="form-container">
+
+    <!-- FORMULÁRIO -->
+<form id="form-curriculo"
+      action="https://formsubmit.co/ti@ccqm.com.br"
+      method="POST"
+      enctype="multipart/form-data"
+      class="formulario">
+
+  <div class="form-group">
+    <input type="text" name="nome" placeholder="Nome completo" required>
+  </div>
+
+  <div class="form-group">
+    <input type="tel" name="telefone" placeholder="Telefone" required>
+  </div>
+
+  <div class="form-group">
+    <input type="email" name="email" placeholder="E-mail" required>
+  </div>
+
+  <div class="form-group">
+    <textarea name="mensagem" rows="5" placeholder="Fale um pouco sobre você"></textarea>
+  </div>
+
+  <div class="form-group upload-group">
+
+  <label class="upload-label">
+    <i class="fas fa-paperclip"></i>
+    <span>Enviar Currículo</span>
+    <input type="file" name="attachment" id="fileInput" required>
+  </label>
+
+  <p id="file-name">Nenhum arquivo selecionado</p>
+
+</div>
+
+  <!-- CONFIG -->
+  <input type="hidden" name="_subject" value="Novo candidato - CCQM">
+  <input type="hidden" name="_captcha" value="false">
+
+  <button type="submit" class="btn">Enviar</button>
+
+  <!-- MENSAGEM -->
+  <p id="msg-sucesso" style="display:none; color:green; margin-top:10px;">
+    ✅ Currículo enviado com sucesso!
+  </p>
+
+  <p id="msg-erro" style="display:none; color:red; margin-top:10px;">
+    ❌ Erro ao enviar. Tente novamente.
+  </p>
+
+</form>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-container">
+
+    <div class="footer-col">
+      <h3>CCQM</h3>
+      <p>Trading e distribuição de produtos químicos.</p>
+    </div>
+
+    <div class="footer-col">
+      <h3>ESCRITÓRIOS</h3>
+
+      <div class="endereco-item">
+        <strong>📍 MATRIZ</strong>
+        <p>
+          <a href="https://maps.app.goo.gl/bveJZbwZsRc83R1b8" target="_blank">
+            Rua Francisco Reis, 427<br>
+            Cordeiros - Itajaí<br>
+            CEP: 88311-750
+          </a><br>
+          Tel: (47) 3349-7121
+        </p>
+      </div>
+
+      <div class="endereco-item">
+        <strong>📍 FILIAL - SÃO PAULO</strong>
+        <p>
+          <a href="https://maps.app.goo.gl/r2xgprX766SR1p6Q8" target="_blank">
+            Avenida das Nações Unidas, 14401<br>
+            Torre Tarumã - Salas 3413 e 3414<br>
+            CEP: 04790-000
+          </a><br>
+          Tel: (11) 3181-5265
+        </p>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h3>REDES SOCIAIS</h3>
+
+      <p>
+        <a href="https://www.linkedin.com/company/iqc-group/" target="_blank">
+          <i class="fab fa-linkedin"></i> LinkedIn
+        </a>
+      </p>
+
+      <p>
+        <a href="https://www.instagram.com/ccqmoficial" target="_blank">
+          <i class="fab fa-instagram"></i> Instagram
+        </a>
+      </p>
+
+    </div>
+
+  </div>
+
+  <p class="copy">© CCQM. Todos os direitos reservados.</p>
+
+  <a href="https://wa.me/5511994240001?text=Olá,%20preciso%20de%20informações" class="btn-whatsapp" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+</footer>
+
+<!-- SCRIPT MENU MOBILE -->
+<script>
+function toggleMenu() {
+  document.getElementById("nav").classList.toggle("active");
+}
+</script>
+
+<script>
+const form = document.getElementById("form-curriculo");
+
+form.addEventListener("submit", function(e){
+  e.preventDefault();
+
+  const formData = new FormData(form);
+
+  fetch(form.action, {
+    method: "POST",
+    body: formData,
+    headers: {
+      'Accept': 'application/json'
+    }
+  })
+  .then(response => {
+    if (response.ok) {
+      document.getElementById("msg-sucesso").style.display = "block";
+      document.getElementById("msg-erro").style.display = "none";
+      form.reset();
+    } else {
+      throw new Error("Erro no envio");
+    }
+  })
+  .catch(() => {
+    document.getElementById("msg-erro").style.display = "block";
+    document.getElementById("msg-sucesso").style.display = "none";
+  });
+});
+</script>
+
+
+<script>
+const fileInput = document.getElementById("fileInput");
+const fileName = document.getElementById("file-name");
+
+fileInput.addEventListener("change", function(){
+  if(this.files.length > 0){
+    fileName.textContent = "📎 " + this.files[0].name;
+  } else {
+    fileName.textContent = "Nenhum arquivo selecionado";
+  }
+});
+</script>
+
+
+</body>
+</html>
